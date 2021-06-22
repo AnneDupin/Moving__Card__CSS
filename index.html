@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moving Flip Cards</title>
+    <style>
+        .container {
+            position: absolute;
+            width: 250px;
+            height: 320px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .laCarte {
+            position: absolute;
+            /* va prendre toute la place dans le container */
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            /* Effet de flip */
+            transition: all 0.5s ease;
+        }
+
+        .devant {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            /* cache la visibilité de devant par derrière */
+            background: black;
+            color: peachpuff;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            border-radius: 20px;
+            font-size: 50px;
+            font-weight: bold;
+        }
+
+   .derriere {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background: #2B2D42;
+    color: #92DCE5;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 20px;
+    font-size: 50px;
+    font-weight: bold;
+    transform: rotateY(180deg);
+}     
+
+.laCarte:hover {
+transform: rotateY(180deg);
+}
+
+
+    </style>
+
+
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="laCarte">
+            <div class="devant">Front</div>
+            <div class="derriere">Back</div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+
